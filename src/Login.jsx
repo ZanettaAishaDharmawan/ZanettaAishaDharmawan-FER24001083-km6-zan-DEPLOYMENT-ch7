@@ -42,10 +42,10 @@ const Login = () => {
       <div>
         <div className="container w-[90vh] bg-[#e73939] h-screen flex justify-center items-center">
           <div className="text-center">
-            <img
+            {/* <img
               alt="Hero"
               className="px-8 py-4 md:px-32 md:py-10 mx-auto"
-            />
+            /> */}
             <h1 className="text-4xl md:text-5xl font-bold mb-2 md:mb-4 text-white">
               MOFLIX
             </h1>
