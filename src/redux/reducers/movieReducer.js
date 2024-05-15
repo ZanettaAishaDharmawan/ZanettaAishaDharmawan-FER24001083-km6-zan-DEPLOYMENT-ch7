@@ -5,6 +5,7 @@ const initialState = {
   movies: [],
   nowPlayingMovies: [],
   topRatedMovies: [],
+  recommendationMovies: [],
   movieId: null,
   movieReviews: null,
   movieVideos: null,
@@ -23,6 +24,9 @@ const movieSlicer = createSlice({
   reducers: {
     setMovieId: (state, action) => {
       state.movieId = action.payload;
+    },
+    setRecommendationMovies: (state, action) => {
+      state.recommendationMovies = action.payload;
     },
     setAllMovies: (state, action) => {
       state.movies = action.payload;
@@ -72,7 +76,7 @@ const movieSlicer = createSlice({
   },
 });
 
-export const { setHoveredMoviesId, setMovieReviews, setMovieVideos, setAllMovies, setMovieId, setTopRatedMovies, setTopRatedMoviesHoveredId, clearTopRatedMoviesHoveredId, setMovieDetail, setSearchKeyword, setAllMoviesHoveredId, clearAllHoveredMoviesId, setNowPlayingMovies, setNowPlayingMoviesHoveredId , clearNowPlayingMoviesHoveredId } =
+export const { setHoveredMoviesId, setMovieReviews, setMovieVideos, setAllMovies, setMovieId, setTopRatedMovies, setTopRatedMoviesHoveredId, clearTopRatedMoviesHoveredId, setMovieDetail, setSearchKeyword, setAllMoviesHoveredId, clearAllHoveredMoviesId, setNowPlayingMovies, setNowPlayingMoviesHoveredId , clearNowPlayingMoviesHoveredId , setRecommendationMovies} =
   movieSlicer.actions;
 
 export default movieSlicer.reducer;

@@ -5,6 +5,7 @@ import {
   setMovieReviews,
   setMovieVideos,
   setNowPlayingMovies,
+  setRecommendationMovies,
   setTopRatedMovies,
 } from "../reducers/movieReducer";
 
@@ -15,8 +16,27 @@ export const getAllMovies = () => async (dispatch, getState) => {
     const response = await axios.get(
       `https://api.themoviedb.org/3/movie/popular?language=en-US&page=1&include_adult=false&api_key=${API_KEY}`
     );
-    console.log("response", response.data.results);
+    console.log("response All Movies", response.data.results);
     dispatch(setAllMovies(response.data.results));
+  } catch (error) {
+    if (axios.isAxiosError(error)) {
+      alert(error.message);
+      return;
+    }
+    alert(error.message);
+  }
+
+  
+};
+
+export const getRecommendation = () => async (dispatch, getState) => {
+  try {
+    const response = await axios.get(
+      `https://api.themoviedb.org/3/movie/upcoming?language=en-US&page=1&api_key=${API_KEY}`
+    );
+    const recommendationMovies = response.data.results;
+    dispatch(setRecommendationMovies(recommendationMovies));
+    console.log('recommendationMovies', recommendationMovies)
   } catch (error) {
     if (axios.isAxiosError(error)) {
       alert(error.message);
@@ -67,6 +87,8 @@ export const getDetailMovie = (id) => async (dispatch, getState) => {
       `https://api.themoviedb.org/3/movie/${id}?language=en-US&api_key=${API_KEY}`
     );
     console.log("response", response);
+    console.log('INIIIIII ISINYA')
+    console.log('response.data', response.data)
     dispatch(setMovieDetail(response.data));
   } catch (error) {
     if (axios.isAxiosError(error)) {
