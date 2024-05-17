@@ -8,6 +8,7 @@ import Register from "./Register";
 import NowPlaying from "./NowPlaying";
 import TopRated from "./TopRatedPage";
 import Popular from "./PopularPage"
+import ProfileUser from "./ProfileUser";
 import { GoogleOAuthProvider } from '@react-oauth/google';
 export default function Route() {
   const router = createBrowserRouter([
@@ -42,6 +43,10 @@ export default function Route() {
     {
       path: "/popular",
       element: <Popular />,
+    },
+    {
+      path: "/profile",
+      element: <ProfileUser />,
     },
   ]);
 

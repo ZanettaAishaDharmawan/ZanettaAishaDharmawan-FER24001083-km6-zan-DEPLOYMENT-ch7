@@ -44,7 +44,7 @@ export const fetchUserData = () => async (dispatch) => {
       }
     );
     const userData = response.data;
-    console.log("User profile: ", userData);
+    // console.log("User profile: ", userData);
     // Dispatch an action to update user data in the Redux store
     dispatch(setUserData(userData));
   } catch (error) {

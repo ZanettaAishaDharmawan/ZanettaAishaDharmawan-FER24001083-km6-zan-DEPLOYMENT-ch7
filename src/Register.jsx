@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-// import RegisterImage from "./assets/Register.svg";
+import RegisterImage from "./assets/Register.svg";
 import GoogleLogin from "./GoogleLogin";
 import { Link } from "react-router-dom";
 
@@ -54,11 +54,11 @@ export default function Register() {
       <div>
         <div className="container w-[90vh] bg-[#e73939] h-screen flex justify-center items-center">
           <div className="text-center">
-            {/* <img
-              // src={RegisterImage}
+            <img
+              src={RegisterImage}
               alt="Hero"
               className="px-8 py-4 md:px-32 md:py-10 mx-auto"
-            /> */}
+            />
             <h1 className="text-4xl md:text-5xl font-bold mb-2 md:mb-4 text-white">
               MOFLIX
             </h1>

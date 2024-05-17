@@ -33,7 +33,7 @@ export const fetchUserData = () => async (dispatch) => {
       }
     );
     const userData = response.data;
-    console.log("User profile: ", userData);
+    // console.log("User profile: ", userData);
     dispatch(setUserData(userData));
   } catch (error) {
     if (error.response && error.response.status === 401) {
